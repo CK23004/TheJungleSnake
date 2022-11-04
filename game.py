@@ -16,7 +16,6 @@ pygame.display.update()
 clock=pygame.time.Clock()
 
 def border(game_display,x,y):
-    # pygame.draw.rect(game_display,'white',(x,y,500,500),0)
     for i in range(8):
         pygame.draw.rect(game_display,'#002929',(x-i,y-i,852,523),1)
 
@@ -29,16 +28,8 @@ def winloop():
     color_light ='#8B4513'
     color_dark = '#CD853F'
     sound_entry = pygame.mixer.Sound("entry generated.mp3")
-    # for i in range(10):
-    #     sound.play()
-    #     i+=1
     sound_entry.play(-1)
-    # start=False
-    # if start:
-        # sound_entry.stop()
-    # i=sound_entry.get_length()
-    # print(i)
-    # sound_entry.fadeout()
+   
 
     while not exit_game:
         for event in pygame.event.get():
@@ -140,27 +131,21 @@ def gameloop():
 
             if 510 <= mouse[0] <= 670 and 390 <= mouse[1] <= 540:
                 pygame.draw.rect(game_display, color_light, [490, 390, 160, 50])
-                # print("next")
+             
             else:
                 pygame.draw.rect(game_display, color_dark, [490, 390, 160, 50])
             if 310 <= mouse[0] <= 470 and 390 <= mouse[1] <= 540:
                 pygame.draw.rect(game_display, color_light, [290, 390, 160, 50])
-                # print("next")
             else:
                 pygame.draw.rect(game_display, color_dark, [290, 390, 160, 50])
-                # print(mouse)
-            # text = "Game over"
             text2= f"{score}"
             text3= f"{highscore1}"
-            # text1 = "Press 'ENTER' to Play Again"
             game_display.blit(screen_button1, [500, 395])
             game_display.blit(screen_button2, [300, 395])
-            # screen_text = font.render(text, True,)
-            # screen_text2 = font1.render(text1, True, 'white')
+            
             screen_text3 = font1.render(text2, True, white)
             screen_text4 = font1.render(text3, True, white)
-            # game_display.blit(screen_text, [350, 244])
-            # game_display.blit(screen_text2, [250, 400])
+ 
             game_display.blit(screen_text3, [415, 332])
             game_display.blit(screen_text4, [700, 332])
             pygame.display.update()
